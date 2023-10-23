@@ -13,5 +13,5 @@ void drawWifiSymbol();
 void drawTemp(float temp);
 void drawErro();
 void drawIniciando();
-
+void drawWifi();
 #endif

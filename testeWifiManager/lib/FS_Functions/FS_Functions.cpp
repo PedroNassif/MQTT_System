@@ -56,13 +56,11 @@ void removeDir(fs::FS &fs, const char * path){
 String readFile(fs::FS &fs, const char * path){
     Serial.printf("Reading file: %s\r\n", path);
 
-    File file = fs.open(path, FILE_READ); //criando aqruivo File
+    File file = fs.open(path, FILE_READ); //criando aqruivo file
     if(!file || file.isDirectory()){
         Serial.println("- failed to open file for reading");
         return String();
     }
-
-    Serial.println("- read from file:");
     String fileContent;
     while(file.available()){
         fileContent += String((char)file.read());
