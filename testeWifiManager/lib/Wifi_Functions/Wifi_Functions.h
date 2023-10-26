@@ -5,7 +5,7 @@
 
 
 void WifiBegin(); //Inicia o Wifi com os configurações desejadas
-void configPortal(char*); //Inicia a configuração do Portal
+void configPortal(); //Inicia a configuração do Portal
 char* getMacAdress(); //Obtém o endereço MAC do aparelho utilizado
 void wifiConnection();
 

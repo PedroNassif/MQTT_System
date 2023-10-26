@@ -7,6 +7,7 @@ ModbusMaster modbus;
 
 
 void modbusBegin(){
+RS485Serial.begin(9600, SERIAL_8N2, RX_PIN, TX_PIN);  
 modbus.begin(SLAVE_ADD, RS485Serial); // Inicializa o ModbusMaster com o endereço do escravo e a porta Serial RS485
 }
 

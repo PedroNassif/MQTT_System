@@ -10,6 +10,9 @@ WiFiManager wm;
 const char* ssid = "Dicalab";
 const char* password = "dicalab2763";
 
+//Nome da rede do config Portal
+const char* nome_da_rede = "Esp32-Ap"; //Define o nome da rede
+
 //Flags
 bool shouldSaveConfig = false;
 
@@ -17,12 +20,12 @@ bool shouldSaveConfig = false;
 byte mac[6];
 char mac_Id[18];
 
-void configPortal (char* name){
+void configPortal (){
  
- if (!wm.autoConnect(name)){
+ if (!wm.autoConnect(nome_da_rede)){
    Serial.println("Falha ao Conectar automaticamente");
 
-   if (!wm.startConfigPortal(name)) {
+   if (!wm.startConfigPortal(nome_da_rede)) {
       Serial.println("Falha ao Conectar ao Portal");
       delay(3000);
       //reset and try again, or maybe put it to deep sleep
